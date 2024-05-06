@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>All Products-B BAKES</title>
+	<link rel="stylesheet" type="text/css" href="style1.css">
+	<link href="<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,700;1,600&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="header">
+<div class="container">
+	<div class="navbar">
+		<div class="logo">
+			<img src="images/b.jpg" width="120px">
+		</div>
+		<nav>
+			<ul id="menuitems">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="products.html">Menu</a></li>
+				<li><a href="aboutpage.html">About</a></li>
+				<li><a href="contactpage1.html">Contact</a></li>
+				<li><a href="feedback.html">Feedback</a></li>
+				<li><a href="profile.html">Profile</a></li>
+			</ul>
+		</nav>
+		<a href="Cart-page.html"><img src="images/cart.png" width="30px" height="30px"></a>
+		<img src="images/menuu.png" width="30px" height="30px" onclick="menutoggle()">
+		
+	</div>
+</div>
+
+<div class="small-container cart-page">
+	<table id="cart-table">
+		<tr>
+			<th>Product</th>
+			<th>Quantity</th>
+			<th>Subtotal</th>
+		</tr>
+		<tr>
+			<td>
+				<div class="cart-info">
+					<a href="product-details.html"><img src="images/b6.jpg"></a>
+					<div>
+						<p>Chocolate Euphoria</p>
+						<small>Price: N3,800</small>
+					</div>
+				</div>
+			</td>
+			<td><input type="number" value="1" onchange="calculateTotal()"></td>
+			<td>N3,800</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="cart-info">
+					<a href="product-details.html"><img src="images/b5.jpg"></a>
+					<div>
+						<p>Cookies Oh Cream</p>
+						<small>Price: N3,800</small>
+					</div>
+				</div>
+			</td>
+			<td><input type="number" value="1" onchange="calculateTotal()"></td>
+			<td>N3,800</td>
+		</tr>
+	</table>
+
+	<div class="total-price">
+		<table>
+			<tr>
+				<td>Subtotal</td>
+				<td id="subtotal">N7,600.00</td>
+			</tr>
+			<tr>
+				<td>Tax</td>
+				<td id="tax">N100.00</td>
+			</tr>
+			<tr>
+				<td>Total</td>
+				<td id="total">N7,700.00</td>
+			</tr>
+		</table>
+	</div>
+	<button><a href="checkout.html">Proceed To Checkout</a></button>
+</div>
+
+<script>
+	function calculateTotal() {
+		const table = document.getElementById('cart-table');
+		const rows = table.getElementsByTagName('tr');
+		let subtotal = 0;
+
+		for (let i = 1; i < rows.length; i++) {
+			const row = rows[i];
+			const quantity = parseInt(row.getElementsByTagName('input')[0].value);
+			const priceText = row.getElementsByTagName('small')[0].innerText;
+			const price = parseInt(priceText.replace(/\D/g, ''));
+			const rowTotal = quantity * price;
+			subtotal += rowTotal;
+			row.getElementsByTagName('td')[2].innerText = 'N' + rowTotal.toFixed(2);
+		}
+
+		const tax = 100; // Assuming tax is fixed
+		const total = subtotal + tax;
+
+		document.getElementById('subtotal').innerText = 'N' + subtotal.toFixed(2);
+		document.getElementById('tax').innerText = 'N' + tax.toFixed(2);
+		document.getElementById('total').innerText = 'N' + total.toFixed(2);
+	}
+</script>
+
+</body>
+</html>

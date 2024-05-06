@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Payment</title>
+	<link rel="stylesheet" type="text/css" href="style1.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,700;1,600&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="header">
+<div class="container">
+	<div class="navbar">
+		<div class="logo">
+			<img src="images/b.jpg" width="120px">
+		</div>
+		<nav>
+			<ul id="menuitems">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="products.html">Menu</a></li>
+				<li><a href="aboutpage.html">About</a></li>
+				<li><a href="contactpage1.html">Contact</a></li>
+				<li><a href="feedback.html">Feedback</a></li>
+				<li><a href="profile.html">Profile</a></li>
+			</ul>
+		</nav>
+		<a href="Cart-page.html"><img src="images/cart.png" width="30px height="30px></a>
+		<img src="images/menuu.png" width="30px height="30px onclick="menutoggle()">
+		
+	</div>
+</div>
+
+
+<!-----------------payment---------------->
+<section>
+
+	<h2 style="pink; margin-top: 20px; padding-bottom: 20px; text-align: center;">Credit / Debit Card</h2>
+
+	<div>
+		<div class="_col-75">
+			<div class="container">
+				<form>
+					<div class="_row">
+						<div class="_col-50">
+							<label for="fname">Accepted Cards</label>
+
+							<div class="icon-container">
+								<i class="fab fa-cc-visa" style="color:navy;"></i>
+								<i class="fab fa-cc-amex" style="color:blue;"></i>
+								<i class="fab fa-cc-mastercard" style="color:red;"></i>
+								<i class="fab fa-cc-discover" style="color:orange;"></i>
+							</div>
+
+							<label for="cname">NAME ON CARD</label>
+							<input type="text" id="cname" name="cardname" placeholder="Valid Card Name">
+
+							<label for="ccnum">CARD NUMBER</label>
+							<input type="text" id="ccnum" name="cardnumber" placeholder="Valid Card Number" maxlength="16">
+
+							<label for="expmonth">EXP DATE</label>
+							<input type="text" id="expmonth" name="expmonth" placeholder="MM / YY" maxlength="5">
+
+							<div class="_row">
+								<div class="_col-50">
+									<label for="cvv">CVV CODE</label>
+									<input type="text" id="cvv" name="cvv" placeholder="CVC" maxlength="3">
+								</div>
+							</div>
+
+							<input type="submit" value="Pay" id="pay" style="width:200px;" class="btnPay">
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div style="padding-bottom: 50px;"></div>
+
+
+</section>
+          
+           <div class="small-container">
+			
+           <h1>Pay By Bank Transfer</h1>
+           <p>
+           	<br>
+          <h3> Account Number: 12345678911<br>Bank Name: Guaranty Trust Bank <br> Account Name: B Bakes</h3>
+
+           </p>
+
+
+	  <!--------------------footer------------------>
+<br>
+  
+<div class="footer">
+
+	<div class="container">
+
+		<div class="row">
+
+			<div class="footer-col-1">
+
+				<h3>CONNECT WITH US</h3>
+
+				</div>
+
+			</div>
+
+			<div class="footer-col-3">
+                <ul>
+					<div class="app-logo">
+					 <a href="https://www.instagram.com/b___bakes/" target="_blank">
+						 <img src="images/insta.jpg" alt="Instagram Logo">
+					 </a>
+				 </div>					
+
+		</div>
+
+		<hr>
+
+		<p class="Copyright"> Copyright 2023 <br> All rights reserved.</p>
+
+	</div>
+
+</div>
+  <!------js for toggle menu----->
+
+  <script>
+
+	  const menuitems= document.getElementById('menuitems');
+
+	  let isMenuHidden = true
+
+	  const menutoggle  = () => {
+
+		  if(isMenuHidden){
+
+			  menuitems.style.transform = 'translateY(10px)'
+
+			  isMenuHidden = false
+
+		  }else{
+
+			  menuitems.style.transform = 'translateY(-320%)'
+
+			  isMenuHidden = true
+
+		  }
+
+	  }
+  </script>
+
+</body>
+</html>

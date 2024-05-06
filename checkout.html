@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Payment</title>
+	<link rel="stylesheet" type="text/css" href="style1.css">
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,700;1,600&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="header">
+<div class="container">
+	<div class="navbar">
+		<div class="logo">
+			<img src="images/b.jpg" width="120px">
+		</div>
+		<nav>
+			<ul id="menuitems">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="products.html">Menu</a></li>
+				<li><a href="aboutpage.html">About</a></li>
+				<li><a href="contactpage1.html">Contact</a></li>
+				<li><a href="account.html">Account</a></li>
+			</ul>
+		</nav>
+		<a href="Cart-page.html"><img src="images/cart.png" width="30px height="30px></a>
+		<img src="images/menuu.png" width="30px height="30px onclick="menutoggle()">
+		
+	</div>
+</div>
+<section>
+
+	<h2 style="color:#2D0C57; margin-top: 20px; padding-bottom: 20px; text-align: center;">Checkout</h2>
+
+	<div class="card-body" style="color: #2D0C57;">
+		
+		<input type="text" class="form-control" id="Address1" placeholder="Address 1" required>
+		<br>
+		<input type="text" class="form-control" id="Address2" placeholder="Address 2 (Optional)" required>
+		<br>
+		<input type="text" class="form-control" id="Phonenumber" placeholder="Phone Number" required>
+		<br>
+
+		<div style="text-align:left">
+
+			<p><strong>Choose a delivery option:</strong></p>
+			<select name="favorites" id="delivery_time" onchange="delivery_time_select();"> 
+				<option selected value="0">Select one:</option>
+				
+				<option value="2">Instant Courier</option>
+				
+			 </select>
+
+			<br><br>
+
+			<div style="text-align:center">
+				<b>Any additional comments? Please add them below:</b><i> (Optional)</i>
+				<textarea style="width: 90%; height: 150px;" name="comment" id="comment" form="usrform" placeholder=" Comments here..."></textarea>
+			</div>
+			<br>
+			<div style="text-align:center;padding-bottom: 50px;">
+                <a href="payment.html" </a>
+				<button type="button" style="width:200px;" class="btn btn-success" id="checkout">Checkout</button>
+			</div>
+		</div>
+	</div>
+
+</section>
+
+  <!--------------------footer------------------>
+  <br>
+  
+  <div class="footer">
+  
+      <div class="container">
+  
+          <div class="row">
+  
+              <div class="footer-col-1">
+  
+                  <h3>CONNECT WITH US</h3>
+  
+                  </div>
+  
+              </div>
+  
+            
+              <div class="footer-col-3">
+                  <ul>
+                      <div class="app-logo">
+                       <a href="https://www.instagram.com/b___bakes/" target="_blank">
+                           <img src="images/insta.jpg" alt="Instagram Logo">
+                       </a>
+                   </div>					
+  
+          </div>
+  
+          <hr>
+  
+          <p class="Copyright"> Copyright 2023 <br> All rights reserved.</p>
+  
+      </div>
+  
+  </div>
+    <!------js for toggle menu----->
+  
+    <script>
+  
+        const menuitems= document.getElementById('menuitems');
+  
+        let isMenuHidden = true
+  
+        const menutoggle  = () => {
+  
+            if(isMenuHidden){
+  
+                menuitems.style.transform = 'translateY(10px)'
+  
+                isMenuHidden = false
+  
+            }else{
+  
+                menuitems.style.transform = 'translateY(-320%)'
+  
+                isMenuHidden = true
+  
+            }
+  
+        }
+    </script>
+    <script>
+      function delivery_time_select()
+      {
+          var delivery_time = document.getElementById("delivery_time");
+  
+          if (delivery_time.options[delivery_time.selectedIndex].text == "Click n Collect")
+          {
+              document.getElementById("Address1").value = "235 Cilantro Street, Off Lounge Road";
+              document.getElementById("Address2").value = "Trade Fair Complex, Kano State, Nigeria.";
+              document.getElementById("Address1").disabled = true;
+              document.getElementById("Address2").disabled = true;
+          }
+          else
+          {
+              document.getElementById("Address1").value = "";
+              document.getElementById("Address2").value = "";
+              document.getElementById("Address1").disabled = false;
+              document.getElementById("Address2").disabled = false;
+          }
+      }
+  </script>
+  
+  
+  </body>
+  </html>

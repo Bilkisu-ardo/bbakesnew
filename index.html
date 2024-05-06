@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B Bakes</title>
+    <link rel="stylesheet" type="text/css" href="style1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,700;1,600&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Login Page -->
+    <div class="Account-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <img src="images/b.jpg" width="50%">
+                </div>
+                <div class="col-2">
+                    <div class="form-container">
+                        <div class="form-btn">
+                            
+                            <span onclick="login()">Login</span>
+                            <span onclick="register()">Register</span>
+                            <hr id="indicator">
+                        </div>
+                        <form id="LoginForm" onsubmit="handleLogin()">
+                            <input type="text" placeholder="username">
+                            <input type="password" placeholder="password">
+                            <button type="submit" class="toggle-btn">Login</button>
+                            <a href="">Forgot Password</a>
+                        </form>
+                        <form id="RegForm" onsubmit="handleRegistration()">
+                            <input type="text" placeholder="Username">
+                            <input type="email" placeholder="Email">
+                            <input type="password" placeholder="Password">
+                            <button type="submit" class="toggle-btn">Register</button>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+	const menuitems= document.getElementById('menuitems');
+
+	let isMenuHidden = true
+
+	const menutoggle  = () => { 
+
+		if(isMenuHidden){
+
+			menuitems.style.transform = 'translateY(10px)'
+
+			isMenuHidden = false
+
+		}else{
+
+			menuitems.style.transform = 'translateY(-320%)'
+
+			isMenuHidden = true
+
+		}
+
+	}
+
+	const LoginForm = document.getElementById('LoginForm');
+	const RegForm = document.getElementById('RegForm');
+	const indicator =document.getElementById('indicator');
+
+	const login = () => {
+		RegForm.classList.add('close')
+		LoginForm.classList.add('open')
+		indicator.style.transform = 'translateX(0px)'
+	}
+
+	const register = () => {
+		RegForm.classList.remove('close')
+		LoginForm.classList.remove('open')
+		indicator.style.transform = 'translateX(100px)'
+	}
+</script>
+
+<script>
+    // Function to redirect to the home page
+    function redirectToHomePage() {
+        window.location.href = "home.html";
+    }
+
+    // Assuming you have functions to handle login and registration elsewhere in your code
+    function handleLogin(event) {
+        event.preventDefault(); // Prevent the form from submitting normally
+        // Code to handle login authentication
+        // If login is successful:
+        redirectToHomePage(); // Redirect to the home page
+    }
+
+    function handleRegistration(event) {
+        event.preventDefault(); // Prevent the form from submitting normally
+        // Code to handle user registration
+        // If registration is successful:
+        redirectToHomePage(); // Redirect to the home page
+    }
+    
+</script>
+
+</body>
+</html>
